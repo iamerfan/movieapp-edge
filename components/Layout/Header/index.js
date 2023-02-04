@@ -1,5 +1,11 @@
 import Navbar from './Navbar'
+import BackToTop from 'components/BackToTop'
 
 export default function Header() {
-   return <Navbar />
+   return (
+      <>
+         <Navbar />
+         <BackToTop />
+      </>
+   )
 }
