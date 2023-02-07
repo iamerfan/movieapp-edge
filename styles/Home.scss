@@ -1,0 +1,136 @@
+.HomeSwiper {
+   padding: 5rem 3rem !important;
+   background-color: transparent !important;
+   .Slide {
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      min-height: 65vh;
+      transition: 0.2s ease-in-out;
+      img {
+         border-radius: 10px;
+         height: 100%;
+         width: 100%;
+         object-fit: fill;
+         z-index: 0;
+      }
+      .SlideTitle {
+         background: linear-gradient(180deg, rgba(255, 255, 255, 0) 20%, rgba(0, 0, 0, 0.98) 90%);
+         width: 100%;
+         height: 100%;
+         bottom: 0;
+         position: absolute;
+         display: flex;
+         flex-direction: column;
+         justify-content: flex-end;
+         font-size: 2.2rem;
+         color: white;
+         opacity: 0;
+         border-bottom-left-radius: 10px;
+         border-bottom-right-radius: 10px;
+         transition: 0.2s ease-in-out;
+         .title {
+            padding-left: 0.5rem;
+            font-family: sans-serif;
+            .divider {
+               margin: 0 0.5rem 0 0;
+               border-bottom: 1px solid white;
+               opacity: 0;
+               transition: 0.2s;
+            }
+         }
+         .releaseDate {
+            position: absolute;
+            top: 1rem;
+            right: -2rem;
+            font-size: 0.7rem;
+            background-color: rgba(0, 0, 0, 0.2);
+            font-family: sans-serif;
+            padding: 0.5rem;
+            border-radius: 10px;
+            transition: 0.7s ease-out;
+         }
+         .vote {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.4);
+            font-family: sans-serif;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            transition: 1s ease-out;
+         }
+         .overview {
+            font-size: 0.9rem;
+            text-align: justify;
+            padding: 0.5rem 0.5rem 0 0.5rem;
+            font-family: sans-serif;
+            opacity: 0.7;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-height: 30px;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+         }
+      }
+   }
+   .swiper-slide-active {
+      transform: scale(1.2);
+      transition: 0.2s ease-in-out;
+      z-index: 3;
+      .SlideTitle {
+         opacity: 1;
+         .title {
+            .divider {
+               opacity: 0.8;
+            }
+         }
+         .releaseDate {
+            right: 1rem;
+         }
+      }
+   }
+   .swiper-slide-next {
+      .SlideTitle {
+         background-color: rgba($color: #000000, $alpha: 0.6);
+         opacity: 1;
+         color: transparent;
+      }
+   }
+   .swiper-slide-prev {
+      .SlideTitle {
+         background-color: rgba($color: #000000, $alpha: 0.3);
+         opacity: 1;
+         color: transparent;
+      }
+   }
+   .swiper-wrapper {
+      padding-left: 10rem;
+   }
+}
+
+@media only screen and (max-width: 1000px) {
+   .HomeSwiper {
+      .swiper-wrapper {
+         padding-left: 4rem;
+      }
+      .Slide {
+         min-height: 300px;
+         .SlideTitle {
+            .overview {
+               display: none !important;
+            }
+            .title {
+               font-size: 1.3rem;
+               text-align: center;
+               padding: 1rem;
+               .divider {
+                  display: none;
+               }
+            }
+         }
+      }
+   }
+}

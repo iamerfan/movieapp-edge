@@ -1,5 +1,5 @@
 {
-   "name": "nextapp",
+   "name": "movie_app",
    "version": "0.1.0",
    "private": true,
    "scripts": {
@@ -16,6 +16,7 @@
       "eslint": "8.31.0",
       "eslint-config-next": "13.1.1",
       "framer-motion": "^6.5.1",
+      "mongodb": "^5.0.0",
       "next": "13.1.1",
       "nprogress": "^0.2.0",
       "react": "18.2.0",
