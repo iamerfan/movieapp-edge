@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import NProgress from 'nprogress'
 import { useEffect } from 'react'
+import 'nprogress/nprogress.css'
 
 export default function initialNprogress() {
    const router = useRouter()

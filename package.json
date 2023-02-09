@@ -9,6 +9,7 @@
       "lint": "next lint"
    },
    "dependencies": {
+      "@heroicons/react": "^2.0.15",
       "@next/font": "^13.1.1",
       "@react-aria/ssr": "^3.4.1",
       "@reduxjs/toolkit": "^1.9.1",

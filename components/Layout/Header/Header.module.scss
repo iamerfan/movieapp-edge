@@ -1,1 +1,150 @@
+.Navbar {
+   position: fixed;
+   color: #fff;
+   top: 0;
+   height: 70px;
+   z-index: 5;
+   transition: 0.2s ease-in-out;
+   width: 100%;
+   background-color: transparent;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: 0.2s ease-in-out;
+   &.active {
+      background-color: rgba(0, 0, 0, 0.7);
+      transition: 0.2s ease-in-out;
+      .Logo {
+         transition: 0.2s ease-in-out;
+         left: 7rem;
+      }
+      .HeaderItems {
+         width: 100%;
+         transition: 0.2s;
+         gap: 3rem;
+      }
+   }
+   .Logo {
+      position: absolute;
+      color: white;
+      display: flex;
+      align-items: center;
+      z-index: 3;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0.5rem;
+      transition: 0.5s ease-in-out;
+      gap: 0.5rem;
+      label {
+         font-size: 1.6rem;
+         font-family: Kanit;
+      }
+   }
+   .HeaderItems {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30rem;
+      transition: 0.2s;
+      white-space: nowrap;
+      .Seperators {
+         display: flex;
+         align-items: center;
+         gap: 3rem;
+         .item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            svg {
+               width: 20px;
+               height: 20px;
+            }
+         }
+         .Login {
+            padding: 1rem;
+         }
+         &:first-of-type {
+            margin-left: -2rem;
+         }
+      }
+   }
+}
+@media only screen and (max-width: 1000px) {
+   .Navbar {
+      background-color: rgba(0, 0, 0, 0.808);
+      min-height: 80px;
+      transition: 0.2s;
+      border-bottom: 1px solid transparent;
 
+      .Logo {
+         top: 0.2rem;
+         left: 50%;
+      }
+      &.collapse {
+         border-color: rgba(255, 255, 255, 0.3);
+         border-bottom-left-radius: 20px;
+         border-bottom-right-radius: 20px;
+         .Logo {
+            white-space: nowrap;
+            left: 50%;
+            transform: translateX(-60%);
+         }
+         & {
+            height: 350px;
+         }
+         .HeaderItems {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            gap: 2rem;
+            padding: 6rem 0 1rem 0;
+            transition: 0.2s;
+
+            .Seperators {
+               padding: 0 1rem;
+               gap: 2rem;
+               text-align: left;
+               flex-direction: column;
+               align-items: center;
+               font-size: 1.4rem;
+               transition: 0.2s;
+
+               &:first-of-type {
+                  margin-left: unset;
+               }
+               &.Login {
+                  flex-direction: row;
+               }
+            }
+         }
+         &.active {
+            background-color: rgba(0, 0, 0, 0.808);
+            .HeaderItems {
+               flex-direction: column;
+               .Seperators {
+                  gap: inherit;
+               }
+               .Login {
+                  position: unset;
+               }
+            }
+         }
+      }
+      .HeaderItems {
+         display: none;
+      }
+      .Logo {
+         left: 6rem;
+      }
+      .Toggle {
+         position: absolute;
+         right: 1rem;
+         top: 0.8rem;
+         z-index: 5;
+         display: block;
+         height: 40px;
+         width: 40px;
+      }
+   }
+}

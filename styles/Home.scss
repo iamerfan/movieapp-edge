@@ -1,10 +1,49 @@
 .HomeSwiper {
-   padding: 5rem 3rem !important;
+   min-height: 100vh;
+   padding: 10rem 3rem 2rem 3rem !important;
    background-color: transparent !important;
+   .Switch {
+      position: absolute;
+      z-index: 5;
+      top: 4rem;
+      right: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      button {
+         padding: 0.5rem 0.7rem 0.3rem 0.7rem;
+         background-color: transparent;
+         color: #fff;
+         border-radius: 10px;
+         border: 1px solid rgb(233, 57, 57);
+         transition: 0.2s;
+         font-size: 0.6rem;
+         max-width: 60px;
+         max-height: 70px;
+         min-width: 60px;
+         white-space: nowrap;
+         min-height: 50px;
+         &.active {
+            background-color: rgb(233, 57, 57);
+            border-color: transparent;
+
+            white-space: nowrap;
+            z-index: 2;
+            transform: scale(1.2);
+            &:hover {
+               background-color: rgb(163, 4, 4);
+            }
+         }
+         &:hover {
+            background-color: rgba(233, 57, 57, 0.76);
+         }
+      }
+   }
    .Slide {
       border-radius: 10px;
       border: 1px solid rgba(255, 255, 255, 0.2);
-      min-height: 65vh;
+      min-height: 60vh;
       transition: 0.2s ease-in-out;
       img {
          border-radius: 10px;
@@ -22,9 +61,10 @@
          display: flex;
          flex-direction: column;
          justify-content: flex-end;
+         background-color: rgba($color: #000000, $alpha: 0.6);
+         opacity: 1;
+         color: transparent;
          font-size: 2.2rem;
-         color: white;
-         opacity: 0;
          border-bottom-left-radius: 10px;
          border-bottom-right-radius: 10px;
          transition: 0.2s ease-in-out;
@@ -33,7 +73,7 @@
             font-family: sans-serif;
             .divider {
                margin: 0 0.5rem 0 0;
-               border-bottom: 1px solid white;
+               border-bottom: 1px solid rgba(255, 255, 255, 0.2);
                opacity: 0;
                transition: 0.2s;
             }
@@ -43,23 +83,49 @@
             top: 1rem;
             right: -2rem;
             font-size: 0.7rem;
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: rgba(0, 0, 0, 0.4);
             font-family: sans-serif;
             padding: 0.5rem;
             border-radius: 10px;
-            transition: 0.7s ease-out;
+            opacity: 0;
+            transition: 0.6s ease-out;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: max-content;
+            white-space: nowrap;
+            svg {
+               margin-bottom: 0.2rem;
+               min-height: 15px;
+               min-width: 15px;
+               max-width: 15px;
+               max-height: 15px;
+            }
          }
          .vote {
             position: absolute;
             top: 1rem;
-            left: 1rem;
+            left: -2rem;
             font-size: 0.8rem;
             font-weight: bold;
             background-color: rgba(0, 0, 0, 0.4);
             font-family: sans-serif;
+            opacity: 0;
             padding: 0.5rem 1rem;
             border-radius: 10px;
-            transition: 1s ease-out;
+            transition: 0.6s ease-out;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 70px;
+            svg {
+               color: gold;
+               margin-bottom: 0.2rem;
+               min-height: 15px;
+               min-width: 15px;
+               max-width: 15px;
+               max-height: 15px;
+            }
          }
          .overview {
             font-size: 0.9rem;
@@ -77,10 +143,11 @@
       }
    }
    .swiper-slide-active {
-      transform: scale(1.2);
-      transition: 0.2s ease-in-out;
+      transform: scale(1.3);
       z-index: 3;
       .SlideTitle {
+         background-color: transparent;
+         color: white;
          opacity: 1;
          .title {
             .divider {
@@ -89,10 +156,17 @@
          }
          .releaseDate {
             right: 1rem;
+            opacity: 1;
+         }
+         .vote {
+            left: 1rem;
+            opacity: 1;
          }
       }
    }
    .swiper-slide-next {
+      transform: scale(1.1) !important;
+      z-index: 2;
       .SlideTitle {
          background-color: rgba($color: #000000, $alpha: 0.6);
          opacity: 1;
@@ -100,6 +174,7 @@
       }
    }
    .swiper-slide-prev {
+      transform: scale(1.1) !important;
       .SlideTitle {
          background-color: rgba($color: #000000, $alpha: 0.3);
          opacity: 1;
@@ -107,17 +182,65 @@
       }
    }
    .swiper-wrapper {
-      padding-left: 10rem;
+      padding-left: 5rem;
+   }
+   .swiper-pagination {
+      bottom: 2rem !important;
+      width: max-content !important;
+      z-index: 5 !important;
+      left: 60% !important;
+      height: 3rem !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      transition: 0.2s;
+
+      .swiper-pagination-bullet {
+         background: #fff !important;
+         height: 1rem !important;
+         width: 1rem !important;
+         transition: 0.2s;
+
+         &.swiper-pagination-bullet-active {
+            transform: scale(1.4) !important;
+            transition: 0.2s;
+         }
+      }
    }
 }
 
 @media only screen and (max-width: 1000px) {
    .HomeSwiper {
-      .swiper-wrapper {
-         padding-left: 4rem;
+      min-height: 680px !important;
+      padding: 8.5rem 3rem 5rem 0 !important;
+      .Switch {
+         position: absolute;
+         z-index: 5;
+         bottom: 15%;
+         top: unset;
+         right: unset;
+         left: 50%;
+         transform: translateX(-45%);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         border-radius: 10px;
+         button {
+            padding: 0.5rem 0.7rem 0.3rem 0.7rem;
+            font-size: 0.6rem;
+            max-width: 60px;
+            max-height: 70px;
+            min-width: 60px;
+            white-space: nowrap;
+            min-height: 50px;
+         }
       }
+      // .swiper-wrapper {
+      // }
       .Slide {
          min-height: 300px;
+         width: auto;
          .SlideTitle {
             .overview {
                display: none !important;
@@ -130,6 +253,15 @@
                   display: none;
                }
             }
+         }
+      }
+      .swiper-pagination {
+         left: 50% !important;
+         gap: 0.1rem;
+         transform: translateX(-50%);
+         .swiper-pagination-bullet {
+            height: 0.5rem !important;
+            width: 0.5rem !important;
          }
       }
    }

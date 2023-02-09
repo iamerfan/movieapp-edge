@@ -2,10 +2,19 @@
    font-family: yekan;
    src: url(./Yekan.ttf);
 }
+@font-face {
+   font-family: ShabnamED;
+   src: url(./Shabnam.ttf);
+}
+@font-face {
+   font-family: Kanit;
+   src: url(./Kanit-Medium.ttf);
+}
 body {
    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.73), rgba(0, 0, 0, 0.8)),
       url('../public/bg2.jpg');
    background-size: contain;
+   scroll-behavior: smooth;
 }
 main {
    display: flex;
@@ -17,20 +26,25 @@ main {
    justify-content: center;
 }
 * {
-   font-family: yekan;
+   font-family: ShabnamED;
+   scroll-behavior: smooth;
 }
 a {
    text-decoration: none !important;
 }
 .BackToTop {
    position: fixed;
-   bottom: 0;
-   right: 0;
+   bottom: 2rem;
+   right: 2rem;
    z-index: -1;
    opacity: 0;
+   width: 40px;
+   height: 40px;
+   background-color: rgba(255, 255, 255, 0.243);
    border-radius: 50%;
-   background-color: white;
-   border: 0;
+   svg {
+      color: rgb(0, 0, 0);
+   }
    &.Active {
       opacity: 1 !important;
       z-index: 999 !important;
@@ -47,4 +61,54 @@ a {
    display: flex;
    align-items: center;
    border-radius: 10px;
+}
+
+/* width */
+::-webkit-scrollbar {
+   width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+   background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+   background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+   background: #555;
+}
+.swiper-button-prev,
+.swiper-button-next {
+   color: red !important;
+   background-color: #000000b1;
+   border-radius: 10px;
+   height: 50px !important;
+   width: 50px !important;
+   transition: 0.2s;
+   &::after {
+      transform: scale(0.5);
+   }
+   &:hover {
+      background-color: #000000;
+   }
+}
+#nprogress {
+   .bar {
+      background: rgb(255, 0, 0) !important;
+      color: rgb(255, 0, 0) !important;
+      height: 3px !important;
+      box-shadow: 0 0 0 2px red !important;
+      outline: 0 !important;
+   }
+   .spinner-icon {
+      margin-right: 3rem !important;
+      margin-top: 0.5rem !important;
+      border-top: 5px solid rgb(174, 3, 3) !important;
+      border-left: 5px solid rgb(174, 3, 3) !important;
+   }
 }
