@@ -15,13 +15,12 @@
       background-color: rgba(0, 0, 0, 0.7);
       transition: 0.2s ease-in-out;
       .Logo {
-         transition: 0.2s ease-in-out;
-         left: 7rem;
+         left: 50%;
       }
       .HeaderItems {
          width: 100%;
          transition: 0.2s;
-         gap: 3rem;
+         gap: 20rem;
       }
    }
    .Logo {
@@ -30,7 +29,7 @@
       display: flex;
       align-items: center;
       z-index: 3;
-      left: 50%;
+      left: 10%;
       transform: translateX(-50%);
       padding: 0.5rem;
       transition: 0.5s ease-in-out;
@@ -44,7 +43,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 30rem;
+      gap: 3rem;
       transition: 0.2s;
       white-space: nowrap;
       .Seperators {
@@ -75,15 +74,15 @@
       min-height: 80px;
       transition: 0.2s;
       border-bottom: 1px solid transparent;
-
-      .Logo {
-         top: 0.2rem;
-         left: 50%;
-      }
       &.collapse {
          border-color: rgba(255, 255, 255, 0.3);
          border-bottom-left-radius: 20px;
          border-bottom-right-radius: 20px;
+         &.active {
+            .Logo {
+               left: 50%;
+            }
+         }
          .Logo {
             white-space: nowrap;
             left: 50%;
@@ -118,23 +117,12 @@
                }
             }
          }
-         &.active {
-            background-color: rgba(0, 0, 0, 0.808);
-            .HeaderItems {
-               flex-direction: column;
-               .Seperators {
-                  gap: inherit;
-               }
-               .Login {
-                  position: unset;
-               }
-            }
-         }
       }
       .HeaderItems {
          display: none;
       }
       .Logo {
+         top: 0.2rem;
          left: 6rem;
       }
       .Toggle {
@@ -145,6 +133,21 @@
          display: block;
          height: 40px;
          width: 40px;
+      }
+      &.active {
+         .Logo {
+            left: 6rem;
+         }
+         .HeaderItems {
+            flex-direction: column;
+
+            .Seperators {
+               gap: inherit;
+            }
+            .Login {
+               position: unset;
+            }
+         }
       }
    }
 }

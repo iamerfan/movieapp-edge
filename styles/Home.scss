@@ -2,44 +2,7 @@
    min-height: 100vh;
    padding: 10rem 3rem 2rem 3rem !important;
    background-color: transparent !important;
-   .Switch {
-      position: absolute;
-      z-index: 5;
-      top: 4rem;
-      right: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      button {
-         padding: 0.5rem 0.7rem 0.3rem 0.7rem;
-         background-color: transparent;
-         color: #fff;
-         border-radius: 10px;
-         border: 1px solid rgb(233, 57, 57);
-         transition: 0.2s;
-         font-size: 0.6rem;
-         max-width: 60px;
-         max-height: 70px;
-         min-width: 60px;
-         white-space: nowrap;
-         min-height: 50px;
-         &.active {
-            background-color: rgb(233, 57, 57);
-            border-color: transparent;
 
-            white-space: nowrap;
-            z-index: 2;
-            transform: scale(1.2);
-            &:hover {
-               background-color: rgb(163, 4, 4);
-            }
-         }
-         &:hover {
-            background-color: rgba(233, 57, 57, 0.76);
-         }
-      }
-   }
    .Slide {
       border-radius: 10px;
       border: 1px solid rgba(255, 255, 255, 0.2);
@@ -209,33 +172,49 @@
       }
    }
 }
+.Switch {
+   align-items: center;
+   justify-content: center;
+   border-radius: 10px;
+   display: flex;
+   width: 100%;
+
+   button {
+      padding: 0.5rem 0.7rem 0.3rem 0.7rem;
+      background-color: transparent;
+      color: #fff;
+      border-radius: 10px;
+      border: 1px solid rgb(233, 57, 57);
+      transition: 0.2s;
+      font-size: 0.6rem;
+      max-width: 60px;
+      max-height: 70px;
+      min-width: 60px;
+      white-space: nowrap;
+      min-height: 50px;
+
+      &.active {
+         background-color: rgb(233, 57, 57);
+         border-color: transparent;
+
+         white-space: nowrap;
+         z-index: 2;
+         transform: scale(1.2);
+         &:hover {
+            background-color: rgb(163, 4, 4);
+         }
+      }
+      &:hover {
+         background-color: rgba(233, 57, 57, 0.76);
+      }
+   }
+}
 
 @media only screen and (max-width: 1000px) {
    .HomeSwiper {
-      min-height: 680px !important;
+      min-height: 600px !important;
       padding: 8.5rem 3rem 5rem 0 !important;
-      .Switch {
-         position: absolute;
-         z-index: 5;
-         bottom: 15%;
-         top: unset;
-         right: unset;
-         left: 50%;
-         transform: translateX(-45%);
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         border-radius: 10px;
-         button {
-            padding: 0.5rem 0.7rem 0.3rem 0.7rem;
-            font-size: 0.6rem;
-            max-width: 60px;
-            max-height: 70px;
-            min-width: 60px;
-            white-space: nowrap;
-            min-height: 50px;
-         }
-      }
+
       // .swiper-wrapper {
       // }
       .Slide {
@@ -263,6 +242,10 @@
             height: 0.5rem !important;
             width: 0.5rem !important;
          }
+      }
+      .swiper-slide-active {
+         transform: scale(1.4);
+         z-index: 5;
       }
    }
 }

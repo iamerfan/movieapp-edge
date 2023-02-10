@@ -17,6 +17,7 @@ import {
    LightBulbIcon,
    AtSymbolIcon,
 } from '@heroicons/react/24/solid'
+import Switch from 'components/HomePage/Switch'
 
 export default function Colapsiable() {
    const [headerActive, setHeaderActive] = useState(false)
@@ -41,7 +42,7 @@ export default function Colapsiable() {
             colaps && styles.collapse
          }`}>
          <div className={styles.Logo}>
-            <Image src={Logo} width={40} height={40} />
+            <Image src={Logo} width={40} height={40} alt='' />
             <label>Movie App</label>
          </div>
          <div className={styles.HeaderItems}>
