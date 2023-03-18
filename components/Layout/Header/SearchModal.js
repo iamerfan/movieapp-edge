@@ -24,7 +24,7 @@ const SearchModal = data => {
          <Dialog.Portal>
             <Dialog.Overlay className={styles.DialogOverlay} />
             <Dialog.Content className={styles.DialogContent}>
-               <Dialog.Title className={styles.DialogTitle}>Search Movies / Tv Show's</Dialog.Title>
+               <Dialog.Title className={styles.DialogTitle}>Search Movies / Tv Shows</Dialog.Title>
                <fieldset className={styles.Fieldset}>
                   <label>Keyword</label>
                   <input placeholder='Breaking Bad , Game Of Thrones , etc... ' ref={queryRef} />

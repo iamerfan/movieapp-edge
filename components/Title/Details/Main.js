@@ -54,7 +54,7 @@ export default function Main({ data, extra }) {
       if (!item.data) return
       if (item.data <= 0) return
       return (
-         <Container label={item.title} className={item.className}>
+         <Container key={i} label={item.title} className={item.className}>
             {item.data} {item.more}
          </Container>
       )

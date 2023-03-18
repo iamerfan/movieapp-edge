@@ -19,6 +19,7 @@ export default function Credits({ data }) {
    useEffect(() => {
       if (index === 0) return setArry([...data.cast])
       if (index === 1) return setArry([...data.crew])
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [index])
    const switches = [
       { name: 'Cast', index: 0 },

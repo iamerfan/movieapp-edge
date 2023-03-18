@@ -20,6 +20,7 @@ export default function Images({ data }) {
       if (index === 0) return setArry([...data.posters])
       if (index === 1) return setArry([...data.backdrops])
       if (index === 2) return setArry([...data.logos])
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [index])
 
    const switches = [

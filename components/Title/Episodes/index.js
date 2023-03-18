@@ -15,10 +15,10 @@ export default function Episodes({ data, season, seriesName }) {
    const { slug } = router.query
    const mediaType = slug[0]
    const Season_Query = slug[2]
-   if (mediaType === 'movie') return
-
    const seasonRef = useRef()
    const [activeIndex, setActiveIndex] = useState(Season_Query ? Number(Season_Query) : 0)
+
+   if (mediaType === 'movie') return
 
    const handleClick = i => {
       if (i === activeIndex) return

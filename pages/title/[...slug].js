@@ -10,7 +10,7 @@ import Credits from 'components/Title/Credits'
 import Reviews from 'components/Title/Reviews'
 import Similar from 'components/Title/Similar'
 
-export default ({ data }) => {
+export default function Title({ data }) {
    const { slug } = useRouter().query
    const movie = slug[2] === 'movie' ? true : false
    return (
