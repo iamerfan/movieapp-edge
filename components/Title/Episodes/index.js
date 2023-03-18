@@ -17,9 +17,6 @@ export default function Episodes({ data, season, seriesName }) {
    const Season_Query = slug[2]
    const seasonRef = useRef()
    const [activeIndex, setActiveIndex] = useState(Season_Query ? Number(Season_Query) : 0)
-
-   if (mediaType === 'movie') return
-
    const handleClick = i => {
       if (i === activeIndex) return
       setActiveIndex(i)
@@ -30,6 +27,8 @@ export default function Episodes({ data, season, seriesName }) {
    useEffect(() => {
       if (Season_Query) seasonRef.current.scrollIntoView()
    }, [Season_Query])
+
+   if (mediaType === 'movie') return
 
    return (
       <div className={styles.Container} ref={seasonRef}>
