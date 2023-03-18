@@ -24,7 +24,7 @@ export default function Slide({ item }) {
    }, [item.poster_path, item.backdrop_path])
 
    return (
-      <>
+      <a href={href}>
          <Image
             src={imgUrl}
             fill
@@ -37,7 +37,7 @@ export default function Slide({ item }) {
             alt=''
          />
          {loading && <Loading />}
-         <Link href={href} className={styles.SlideTitle}>
+         <div className={styles.SlideTitle}>
             <label className={styles.Name}>{item.title ? item.title : item.name}</label>
 
             <label className={styles.Release_date}>
@@ -50,7 +50,7 @@ export default function Slide({ item }) {
                <StarIcon />
                {Math.round(item.vote_average * 10) / 10}
             </label>
-         </Link>
-      </>
+         </div>
+      </a>
    )
 }
