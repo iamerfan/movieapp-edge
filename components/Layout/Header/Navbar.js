@@ -17,12 +17,13 @@ import { useRouter } from 'next/router'
 
 export default function Colapsiable() {
    const router = useRouter()
-   useEffect(() => {
-      console.log(router.pathname)
-   }, [router.pathname])
-
    const [headerActive, setHeaderActive] = useState(false)
    const [colaps, setColaps] = useState(false)
+
+   useEffect(() => {
+      colaps && setColaps(false)
+   }, [router.pathname])
+
    const { scrollTop } = useScroll()
    useEffect(() => {
       scrollTop > 10 ? setHeaderActive(true) : setHeaderActive(false)

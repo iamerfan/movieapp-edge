@@ -7,13 +7,13 @@ import { Slide } from './Slide.module.scss'
 import Slider from './Slide'
 import { isMobile } from 'react-device-detect'
 
-export default function Carousel({ children, name, data, noWidth, className, slides, noNav }) {
+export default function Carousel({ children, name, data, sb, className, slides }) {
    const handleChildren = children ? true : false
    return (
       <Swiper
-         spaceBetween={10}
+         spaceBetween={sb ? sb : 10}
          modules={[Navigation]}
-         navigation={noNav ? false : true}
+         navigation={false}
          className={`${styles.Carousel} ${className}`}
          breakpoints={{
             300: {

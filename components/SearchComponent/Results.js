@@ -49,7 +49,7 @@ export default function Results({ data, pageIndex, name }) {
 
    return (
       <div className={styles.Results}>
-         <div className={styles.Name}>{name ? name : Results}</div>
+         <div className={styles.Name}>{name ? name : 'Results'}</div>
          <div className={styles.Pages}>
             Pages:
             {mapPages}

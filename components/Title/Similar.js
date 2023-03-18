@@ -13,7 +13,7 @@ export default function Similar({ data }) {
    return (
       <div className={styles.Container}>
          <div className={styles.Name}>{handleName()} </div>
-         <Carousel data={data.results} className={ReviewCarousel} />
+         <Carousel data={data.results} className={ReviewCarousel} sb={20} />
       </div>
    )
 }

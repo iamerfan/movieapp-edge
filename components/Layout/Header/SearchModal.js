@@ -9,9 +9,12 @@ import { useRouter } from 'next/router'
 const SearchModal = data => {
    const router = useRouter()
    const queryRef = useRef()
-   const handleSearch = () => {
+   const closeRef = useRef()
+   const handleSearch = e => {
+      e.preventDefault()
       const searchValue = queryRef.current.value
       router.push(`/search/${searchValue}/1`)
+      closeRef.current.click()
    }
    return (
       <Dialog.Root>
@@ -36,7 +39,7 @@ const SearchModal = data => {
                      </Dialog.Close>
                   </div>
                </form>
-               <Dialog.Close asChild>
+               <Dialog.Close ref={closeRef} asChild>
                   <button className={styles.CloseIcon} aria-label='Close'>
                      <Cross2Icon />
                   </button>

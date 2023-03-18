@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import Loading from '../../HomePage/Loading'
@@ -10,9 +11,10 @@ export default function ImageSlider({ item }) {
    const imgUrl = `${serverUrl}${item.file_path}`
    useEffect(() => {
       setLoading(true)
+      console.log(item.file_path)
    }, [item.file_path])
    return (
-      <>
+      <Link href={imgUrl} target={`_blank`}>
          <Image
             src={imgUrl}
             fill
@@ -25,6 +27,6 @@ export default function ImageSlider({ item }) {
             alt=''
          />
          {loading && <Loading />}
-      </>
+      </Link>
    )
 }
