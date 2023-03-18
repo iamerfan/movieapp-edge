@@ -1,67 +1,29 @@
 .Carousel {
    padding: 3rem 1rem;
    position: relative;
+   &.SeasonsCarousel {
+      padding: 0 !important;
+      display: flex !important;
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+   }
+   &.EpisodesCarousel {
+      padding: 1rem !important;
+   }
+   &.ReviewCarousel {
+      padding: 2rem 1rem 1rem 1rem !important;
+   }
+
+   &.ImagesCarousel {
+      padding: 1rem 1rem 1rem 1rem !important;
+   }
    .Title {
       font-size: 1.6rem;
       color: white;
       position: absolute;
       top: 0;
    }
-   .Slide {
-      position: relative;
-      height: 300px;
-      border-radius: 10px;
-      transition: 0.2s;
-      img {
-         border-radius: 10px;
-         z-index: -1;
-      }
-      .SlideTitle {
-         position: relative;
-         display: flex;
-         align-items: flex-end;
-         justify-content: center;
-         text-align: center;
-         height: 100%;
-         flex-grow: 1;
-         .Name {
-            width: 100%;
-            min-height: 20%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            background-color: rgba(0, 0, 0, 0.851);
-            transform: scale(1.01);
-            color: white;
-            border-bottom-right-radius: 10px;
-            border-bottom-left-radius: 10px;
-         }
-         .Release_date {
-            padding: 0.5rem;
-            position: absolute;
-            right: 0.5rem;
-            background-color: rgba(0, 0, 0, 0.678);
-            font-size: 0.8rem;
-            color: white;
-            border-radius: 10px;
-            top: 0.5rem;
-         }
-         .Vote {
-            padding: 0.5rem;
-            position: absolute;
-            font-size: 0.8rem;
-            background-color: rgba(0, 0, 0, 0.678);
-            border-radius: 10px;
-            color: white;
-            left: 0.5rem;
-            top: 0.5rem;
-         }
-      }
-      &:hover {
-         transform: scale(1.1);
-      }
-   }
 }
+
 @media only screen and (max-width: 1000px) {
 }

@@ -1,0 +1,152 @@
+.Details {
+   position: relative;
+   width: 30%;
+   border: 1px solid rgba(255, 255, 255, 0.2);
+   .TitleContainer {
+      display: flex;
+      gap: 0.5rem;
+
+      .Label {
+         opacity: 0.8;
+         white-space: nowrap;
+      }
+      .data {
+         font-size: 0.9rem;
+         text-align: justify;
+      }
+      .Overview {
+         text-align: justify;
+      }
+      .Capitalize {
+         text-transform: capitalize;
+      }
+      &.Center {
+         align-items: center !important;
+      }
+   }
+   .Poster {
+      position: absolute;
+      margin-left: 1rem;
+      z-index: 3;
+      margin-top: -1rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+      width: 130px !important;
+      height: 200px !important;
+   }
+   .Top {
+      position: relative;
+      min-height: 50px;
+      color: white;
+      margin-left: 9rem;
+      display: flex;
+      flex-direction: column;
+      padding: 1.4rem 0 0 0.5rem;
+      flex-grow: 1;
+      gap: 0.7rem;
+      min-height: 100px;
+      .Icons {
+         position: absolute;
+         top: -1.2rem;
+         right: 1rem;
+         width: 80px;
+         height: 40px;
+         background-color: #000;
+         color: #fff;
+         display: flex;
+         align-items: center;
+         gap: 0.5rem;
+         justify-content: center;
+         svg {
+            cursor: pointer;
+            height: 25px;
+            width: 25px;
+            margin: 0;
+            transition: 0.5s;
+            &:hover {
+               transform: scale(1.3);
+            }
+            &:active {
+               transform: scale(0.8);
+            }
+         }
+         .Heart {
+            margin-bottom: 0.2rem;
+            & .active {
+               color: rgb(255, 0, 0);
+            }
+         }
+      }
+      .GenreSwiper {
+         padding: 0 1rem 0 0;
+         max-width: 13vw;
+         .Genre {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.7rem 0.5rem 0.5rem 0.5rem;
+            height: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: black !important;
+            color: #fff !important;
+            border-radius: 10px;
+            white-space: nowrap;
+            font-size: 0.7rem;
+            margin-right: 1rem;
+         }
+      }
+   }
+   .Main {
+      position: relative;
+      color: white;
+      font-size: 0.9rem;
+      padding: 2rem 1rem 3rem 1rem;
+      display: flex;
+      flex-direction: column;
+      max-height: 330px;
+      overflow-y: auto;
+      gap: 1rem;
+   }
+   .Bottom {
+      position: absolute;
+      z-index: 2;
+      bottom: -1rem;
+      width: 90%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      color: white;
+      gap: 0.3rem;
+      div {
+         background-color: black;
+         border: 1px solid rgba(255, 255, 255, 0.2);
+         min-height: 45px;
+         flex: 1;
+         max-width: 120px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: 0.5rem;
+         position: relative;
+         img {
+            border-radius: 50%;
+         }
+      }
+   }
+}
+@media only screen and (max-width: 1000px) {
+   .Details {
+      width: 100%;
+      .Poster {
+         width: 200px !important;
+      }
+      .Top {
+         margin-left: 15rem;
+         .GenreSwiper {
+            max-width: 20vw !important;
+         }
+      }
+   }
+}

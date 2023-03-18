@@ -2,7 +2,7 @@ import axios from 'axios'
 const { SERVER, API_KEY } = process.env
 
 const handler = async (req, res) => {
-   const movie = !req.query.type ? true : false
+   const movie = req.query.type === 'movie' ? true : false
    const handleUrl = url => {
       return `${SERVER}/${url}?page=1&${API_KEY}`
    }

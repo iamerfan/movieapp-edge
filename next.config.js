@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
    reactStrictMode: true,
+   experimental: {
+      largePageDataBytes: 220000,
+   },
    env: {
       BASE_URL: process.env.BASE_URL,
    },
@@ -18,6 +21,11 @@ const nextConfig = {
             protocol: 'https',
             hostname: 'image.tmdb.org',
             pathname: '/t/p/**',
+         },
+         {
+            protocol: 'https',
+            hostname: 'www.gravatar.com',
+            pathname: '/avatar/**',
          },
       ],
    },

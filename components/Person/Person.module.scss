@@ -1,0 +1,175 @@
+.Container {
+   display: flex;
+   flex-direction: column;
+   gap: 4rem;
+   padding: 1rem 0;
+}
+.Person {
+   display: flex;
+   height: 97vh;
+   padding: 3.5rem 0 0 0;
+}
+.Main {
+   position: relative;
+   min-width: 40%;
+   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+   transform: scale(1.05);
+
+   img {
+      padding: 0.1rem;
+   }
+   .Credit {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 40%, rgba(0, 0, 0, 0.98) 85%);
+      z-index: 2;
+      display: flex;
+
+      .Name {
+         display: flex;
+         align-items: center;
+         gap: 1rem;
+         color: #fff;
+         align-self: flex-end;
+         width: 100%;
+         font-size: 1.8rem;
+         padding: 1rem;
+         justify-content: space-between;
+         .KnownFor {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem !important;
+         }
+      }
+   }
+}
+.Details {
+   flex-grow: 1;
+   border: 1px solid rgba(255, 255, 255, 0.2);
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   padding: 2rem 1rem 0rem 1rem;
+   gap: 1rem;
+   .TitleContainer {
+      width: 100%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      border-left: 8px solid rgba(255, 255, 255, 0.2);
+      min-height: 55px;
+      transition: 0.5s ease-in-out;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 40%, rgba(0, 0, 0, 0.98) 85%);
+
+      &:last-of-type {
+         border-bottom: 0;
+      }
+
+      .title {
+         font-size: 0.9rem;
+         opacity: 0.8;
+         white-space: nowrap;
+         padding-top: 0.2rem;
+         &.top {
+            align-self: flex-start;
+         }
+      }
+      .data {
+         font-size: 1.1rem;
+         display: flex;
+         gap: 1rem;
+         padding: 0.5rem 1rem;
+         max-width: 100%;
+         max-height: 100%;
+         overflow: auto;
+         z-index: 0;
+         text-align: justify;
+         label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.5rem;
+         }
+      }
+      &:hover {
+         border-color: white;
+      }
+   }
+}
+.Similars {
+   border: 1px solid rgba(255, 255, 255, 0.2);
+   position: relative;
+   padding-top: 1rem;
+   position: relative;
+   .Switch {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: -1.5rem;
+      right: 1rem;
+      button {
+         cursor: pointer;
+         padding: 0.5rem;
+         border: 1px solid rgba(255, 255, 255, 0.2);
+         min-width: 100px;
+         color: #fff;
+         font-size: 1.2rem;
+         background-color: #000;
+         transition: 0.5s ease-in-out;
+         &.active {
+            transform: scale(1.05);
+            background-color: #fff;
+            color: #000;
+         }
+         &:hover {
+            background-color: #424242;
+         }
+      }
+   }
+   .Title {
+      position: absolute;
+      background-color: black;
+      padding: 0.2rem 0.5rem;
+      left: 1rem;
+      top: -1rem;
+      font-size: 1.4rem;
+      color: #fff;
+   }
+}
+@media only screen and (max-width: 1000px) {
+   .Person {
+      flex-direction: column;
+      height: unset !important;
+      .Main {
+         min-height: 60vh;
+         transform: scale(1);
+      }
+      .Details {
+         padding: 0.5rem;
+         border-top-color: transparent;
+         .TitleContainer {
+            position: relative;
+            .title {
+               position: absolute;
+               left: 0.5rem;
+               top: -0.3rem;
+            }
+            .data {
+               padding: 1.5rem 0 0.5rem 0;
+               gap: 0.3rem;
+               label {
+                  font-size: 0.8rem;
+                  text-align: center;
+               }
+            }
+         }
+      }
+   }
+}

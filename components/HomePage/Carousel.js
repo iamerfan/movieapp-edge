@@ -2,42 +2,40 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { Navigation } from 'swiper'
-import Image from 'next/image'
 import styles from './Carousel.module.scss'
-import SmallSlide from './SmallSlide'
+import { Slide } from './Slide.module.scss'
+import Slider from './Slide'
+import { isMobile } from 'react-device-detect'
 
-export default function Carousel({ data, name }) {
-   const mapData = data.map((item, i) => {
-      return (
-         <SwiperSlide className={styles.Slide} key={i}>
-            <SmallSlide item={item} />
-         </SwiperSlide>
-      )
-   })
+export default function Carousel({ children, name, data, noWidth, className, slides, noNav }) {
+   const handleChildren = children ? true : false
    return (
       <Swiper
+         spaceBetween={10}
          modules={[Navigation]}
-         navigation
+         navigation={noNav ? false : true}
+         className={`${styles.Carousel} ${className}`}
          breakpoints={{
             300: {
-               width: 300,
-               slidesPerView: 1,
-               spaceBetween: 20,
+               slidesPerView: slides ? slides : 2,
             },
-            600: {
-               width: 600,
-               slidesPerView: 2,
-               spaceBetween: 5,
+            620: {
+               slidesPerView: slides ? slides : 3,
             },
-            1224: {
-               width: 1224,
-               slidesPerView: 5,
-               spaceBetween: 20,
+            1000: {
+               slidesPerView: slides ? slides : 5,
             },
-         }}
-         className={styles.Carousel}>
+         }}>
          <label className={styles.Title}>{name}</label>
-         {mapData}
+         {handleChildren
+            ? children
+            : data?.map((item, i) => {
+                 return (
+                    <SwiperSlide key={i} className={Slide}>
+                       <Slider item={item} />
+                    </SwiperSlide>
+                 )
+              })}
       </Swiper>
    )
 }

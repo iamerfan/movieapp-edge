@@ -1,0 +1,135 @@
+.Search {
+   min-height: 85vh;
+   margin: 5rem 0 0 0;
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+   .Panel {
+      position: relative;
+      height: 90px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      .SearchButton {
+         position: absolute;
+         right: 0;
+         width: 100px;
+         color: #fff;
+         height: 100%;
+         background-color: transparent;
+         border: 1px solid rgba(255, 255, 255, 0.2);
+         svg {
+            width: 30px;
+            height: 30px;
+         }
+         &:focus,
+         &:active,
+         &:hover {
+            background-color: rgb(26, 25, 25);
+         }
+      }
+      gap: 1rem;
+      input {
+         height: 100%;
+         background-color: transparent;
+         color: #fff;
+         font-size: 1.2rem;
+         border: 0;
+         background-color: rgba(0, 0, 0, 0.576);
+         width: 100%;
+         padding-left: 2rem;
+      }
+      label {
+         color: #fff;
+         font-size: 1.2rem;
+         white-space: nowrap;
+      }
+   }
+}
+.Results {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   flex-grow: 1;
+   max-height: 60%;
+   padding: 1rem 0;
+   border: 1px solid rgba(255, 255, 255, 0.2);
+   .Name {
+      position: absolute;
+      left: 1rem;
+      top: -1rem;
+      min-height: 30px;
+      min-width: 100px;
+      background-color: black;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+   }
+   .Items {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      gap: 1rem;
+      flex-wrap: wrap;
+      max-height: 50vh;
+      flex-wrap: wrap;
+      flex-grow: 1;
+      .Item {
+         position: relative;
+         height: 280px;
+         flex-grow: 1;
+         min-width: 225px;
+         max-width: 225px;
+         border: 1px solid rgba(255, 255, 255, 0.2);
+         img {
+            z-index: -1;
+         }
+         .SlideTitle {
+            text-align: center;
+            height: 100%;
+            width: 100%;
+            z-index: 3;
+            background: linear-gradient(
+               180deg,
+               rgba(255, 255, 255, 0) 20%,
+               rgba(0, 0, 0, 0.98) 90%
+            ) !important;
+         }
+      }
+   }
+   .Pages {
+      position: absolute;
+      right: 1rem;
+      top: -1rem;
+      min-height: 30px;
+      min-width: 100px;
+      background-color: black;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      gap: 0.2rem;
+      padding: 0 1rem;
+
+      label {
+         opacity: 0.7;
+         padding: 0.2rem 0.5rem;
+         border: 1px solid transparent;
+         &.active {
+            border-color: rgba(255, 255, 255, 0.2);
+            opacity: 1;
+         }
+      }
+   }
+}
+@media only screen and (max-width: 1000px) {
+   .Item {
+      min-width: 42% !important;
+      max-width: 42% !important;
+   }
+}
