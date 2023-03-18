@@ -1,6 +1,6 @@
 .Search {
-   min-height: 85vh;
-   margin: 5rem 0 0 0;
+   min-height: 80vh;
+   padding-top: rem;
    display: flex;
    flex-direction: column;
    gap: 2rem;
@@ -128,8 +128,17 @@
    }
 }
 @media only screen and (max-width: 1000px) {
-   .Item {
-      min-width: 42% !important;
-      max-width: 42% !important;
+   .Results {
+      .Items {
+         max-height: 50vh;
+
+         .Item {
+            min-width: 100% !important;
+         }
+      }
+   }
+   .Pages {
+      right: -0.5rem !important;
+      font-size: 0.8rem !important;
    }
 }

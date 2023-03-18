@@ -25,15 +25,17 @@ const SearchModal = data => {
             <Dialog.Overlay className={styles.DialogOverlay} />
             <Dialog.Content className={styles.DialogContent}>
                <Dialog.Title className={styles.DialogTitle}>Search Movies / Tv Shows</Dialog.Title>
-               <fieldset className={styles.Fieldset}>
-                  <label>Keyword</label>
-                  <input placeholder='Breaking Bad , Game Of Thrones , etc... ' ref={queryRef} />
-               </fieldset>
-               <div>
-                  <Dialog.Close asChild onClick={handleSearch}>
-                     <button className={styles.SearchButton}>Search</button>
-                  </Dialog.Close>
-               </div>
+               <form onSubmit={handleSearch}>
+                  <fieldset className={styles.Fieldset}>
+                     <label>Keyword</label>
+                     <input placeholder='Breaking Bad , Game Of Thrones , etc... ' ref={queryRef} />
+                  </fieldset>
+                  <div>
+                     <Dialog.Close asChild onClick={handleSearch}>
+                        <button className={styles.SearchButton}>Search</button>
+                     </Dialog.Close>
+                  </div>
+               </form>
                <Dialog.Close asChild>
                   <button className={styles.CloseIcon} aria-label='Close'>
                      <Cross2Icon />

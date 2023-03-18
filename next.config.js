@@ -1,20 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-   reactStrictMode: true,
-   experimental: {
-      largePageDataBytes: 220000,
-   },
-   env: {
-      BASE_URL: process.env.BASE_URL,
-   },
-   rewrites: () => {
-      return [
-         {
-            source: '/api/tmdb/',
-            destination: 'https://https://api.themoviedb.org/3/',
-         },
-      ]
-   },
    images: {
       remotePatterns: [
          {
@@ -28,6 +13,20 @@ const nextConfig = {
             pathname: '/avatar/**',
          },
       ],
+   },
+   experimental: {
+      largePageDataBytes: 220000,
+   },
+   env: {
+      BASE_URL: process.env.BASE_URL,
+   },
+   rewrites: () => {
+      return [
+         {
+            source: '/api/tmdb/',
+            destination: 'https://https://api.themoviedb.org/3/',
+         },
+      ]
    },
 }
 

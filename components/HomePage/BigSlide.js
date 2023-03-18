@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import Loading from './Loading'
 import Link from 'next/link'
-const serverUrl = 'https://image.tmdb.org/t/p/original/'
+const serverUrl = 'https://image.tmdb.org/t/p/w500/'
 
 export default function BigSlide({ item }) {
    const handleUrl = () => {
@@ -29,7 +29,6 @@ export default function BigSlide({ item }) {
                src={imgUrl}
                fill
                onLoadStart={() => setLoading(true)}
-               quality={80}
                onLoadingComplete={() => setLoading(false)}
                priority
                alt=''
