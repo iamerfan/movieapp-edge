@@ -40,6 +40,7 @@ export default function Episodes({ data, season, seriesName }) {
                   <SwiperSlide key={i} className={Slide}>
                      <EpisodeSlider seriesName={seriesName} item={item} />
                   </SwiperSlide>
+                  //
                )
             })}
          </Carousel>
