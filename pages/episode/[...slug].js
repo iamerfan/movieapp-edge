@@ -21,7 +21,7 @@ export default function Episode({ data, seriesName }) {
    const [loading, setLoading] = useState(true)
    const [activeSwitch, setActiveSwitch] = useState('guest')
    const [crewOrGuset, setCrewOrGuest] = useState(data.guest_stars)
-   const imgUrl = `${serverUrl}${data.still_path}`
+   const imgUrl = `/img${data.still_path}`
    useEffect(() => {
       setLoading(true)
    }, [data.still_path])

@@ -7,7 +7,7 @@ const serverUrl = 'https://image.tmdb.org/t/p/w500'
 
 export default function Main({ data }) {
    const [loading, setLoading] = useState(true)
-   const imgUrl = `${serverUrl}${data.profile_path}`
+   const imgUrl = `/img${data.profile_path}`
    return (
       <div className={styles.Main}>
          <Image

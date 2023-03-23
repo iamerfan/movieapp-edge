@@ -9,7 +9,7 @@ const serverUrl = 'https://image.tmdb.org/t/p/'
 
 export default function EpisodeSlider({ item, seriesName }) {
    const [loading, setLoading] = useState(true)
-   const imgUrl = `${serverUrl}/w500/${item.still_path}`
+   const imgUrl = `/img${item.still_path}`
    useEffect(() => {
       setLoading(true)
    }, [item.still_path])
@@ -31,7 +31,8 @@ export default function EpisodeSlider({ item, seriesName }) {
             href={`/episode/${item.show_id}/${item.season_number}/${item.episode_number}/${
                seriesName && seriesName
             }`}
-            className={`${styles.SlideTitle} ${styles.Episode}`}>
+            className={`${styles.SlideTitle} ${styles.Episode}`}
+         >
             <label className={styles.EpisodeName}>{item.title ? item.title : item.name}</label>
 
             <label className={styles.Release_date}>Episode {item.episode_number}</label>

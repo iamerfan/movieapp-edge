@@ -19,7 +19,7 @@ export default function Result({ item }) {
    }
    const person = item.profile_path ? true : false
    const [loading, setLoading] = useState(true)
-   const imgUrl = `${serverUrl}/w500/${handleUrl()}`
+   const imgUrl = `/img${handleUrl()}`
    const href = person
       ? `/person/${item.id}`
       : `/title/${item.media_type ? item.media_type : type}/${item.id}`

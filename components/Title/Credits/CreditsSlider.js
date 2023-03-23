@@ -10,7 +10,7 @@ const serverUrl = 'https://image.tmdb.org/t/p/w500'
 
 export default function CreditsSlider({ item }) {
    const [loading, setLoading] = useState(true)
-   const imgUrl = `${serverUrl}${item.profile_path}`
+   const imgUrl = `/img${item.profile_path}`
    const href = `/person/${item.id}`
    useEffect(() => {
       setLoading(true)

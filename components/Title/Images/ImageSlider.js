@@ -4,11 +4,9 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import Loading from '../../HomePage/Loading'
 
-const serverUrl = 'https://image.tmdb.org/t/p/w500'
-
 export default function ImageSlider({ item }) {
    const [loading, setLoading] = useState(true)
-   const imgUrl = `${serverUrl}${item.file_path}`
+   const imgUrl = `/img${item.file_path}`
    useEffect(() => {
       setLoading(true)
    }, [item.file_path])
