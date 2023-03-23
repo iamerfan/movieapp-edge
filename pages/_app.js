@@ -1,3 +1,4 @@
+//main page
 import Layout from '@/components/Layout'
 import 'styles/global.scss'
 import 'styles/Home.scss'
