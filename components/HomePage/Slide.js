@@ -18,7 +18,7 @@ export default function Slide({ item }) {
 
    const { type } = useRouter().query
    const [loading, setLoading] = useState(true)
-   const imgUrl = `${server}/img${handleUrl()}`
+   const imgUrl = `/img${handleUrl()}`
    const href = `/title/${type ? type : 'movie'}/${item.id}`
    useEffect(() => {
       setLoading(true)

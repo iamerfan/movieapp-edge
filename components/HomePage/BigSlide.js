@@ -14,7 +14,7 @@ export default function BigSlide({ item }) {
    const router = useRouter()
    const { type } = useRouter().query
    const [loading, setLoading] = useState(true)
-   const imgUrl = `${server}/img${handleUrl()}`
+   const imgUrl = `/img${handleUrl()}`
    const href = `/title/${type ? type : 'movie'}/${item.id}`
 
    useEffect(() => {
