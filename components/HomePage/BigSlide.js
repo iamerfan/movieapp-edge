@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import Loading from './Loading'
 import Link from 'next/link'
-const serverUrl = 'https://image.tmdb.org/t/p/w500/'
+import { server } from 'libs/config'
 
 export default function BigSlide({ item }) {
    const handleUrl = () => {
@@ -14,7 +14,7 @@ export default function BigSlide({ item }) {
    const router = useRouter()
    const { type } = useRouter().query
    const [loading, setLoading] = useState(true)
-   const imgUrl = `${serverUrl}${handleUrl()}`
+   const imgUrl = `${server}/img${handleUrl()}`
    const href = `/title/${type ? type : 'movie'}/${item.id}`
 
    useEffect(() => {

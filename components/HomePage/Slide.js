@@ -6,6 +6,7 @@ import styles from './Slide.module.scss'
 import Loading from './Loading'
 import { CalendarDaysIcon, StarIcon } from '@heroicons/react/24/solid'
 import Link from 'next/link'
+import { server } from 'libs/config'
 
 const serverUrl = 'https://image.tmdb.org/t/p/'
 
@@ -17,7 +18,7 @@ export default function Slide({ item }) {
 
    const { type } = useRouter().query
    const [loading, setLoading] = useState(true)
-   const imgUrl = `${serverUrl}/w500/${handleUrl()}`
+   const imgUrl = `${server}/img${handleUrl()}`
    const href = `/title/${type ? type : 'movie'}/${item.id}`
    useEffect(() => {
       setLoading(true)
