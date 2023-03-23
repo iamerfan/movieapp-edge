@@ -27,6 +27,10 @@ const nextConfig = {
             source: '/api/tmdb/',
             destination: 'https://https://api.themoviedb.org/3/',
          },
+         {
+            source: '/img/:path*',
+            destination: 'https://image.tmdb.org/t/p/w500/:path*',
+         },
       ]
    },
 }
