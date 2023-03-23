@@ -5,14 +5,18 @@
 
    .BigSlide {
       border-radius: 10px;
-      height: 60vh !important;
+      height: 50vh !important;
       border: solid 1px rgba(255, 255, 255, 0.2);
       transition: 0.2s;
+
       img {
          object-fit: fill;
          z-index: -1;
+         height: 50vh;
+         width: 100%;
          border-radius: 10px;
       }
+
       .SlideTitle {
          width: 100%;
          height: 100%;
@@ -25,11 +29,9 @@
          opacity: 1;
          border-radius: 10px;
          //fix transparent line around slide
-         background: linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 0) 20%,
-            rgba(0, 0, 0, 0.98) 90%
-         ) !important;
+         // background: linear-gradient(180deg,
+         //       rgba(255, 255, 255, 0) 20%,
+         //       rgba(0, 0, 0, 0.98) 90%) !important;
          text-align: center;
 
          .Name {
@@ -40,15 +42,21 @@
             justify-content: center;
             text-align: justify;
             flex-direction: column;
+            background: linear-gradient(180deg,
+                  rgba(255, 255, 255, 0)20%,
+                  rgba(0, 0, 0, 0.98) 70%) !important;
             padding: 0.5rem;
             font-size: 1rem;
+            padding-top: 5rem;
             color: white;
             border-bottom-right-radius: 10px;
             border-bottom-left-radius: 10px;
+
             .divider {
                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
                width: 100%;
             }
+
             .overview {
                font-size: 0.7rem;
                text-align: justify;
@@ -62,10 +70,13 @@
          }
       }
    }
+
    .swiper-slide-active {
       z-index: 1;
+
       .BigSlide {
          transform: scale(1.4);
+
          .SlideTitle {
             .Name {
                opacity: 1;
@@ -73,13 +84,17 @@
          }
       }
    }
+
    .swiper-slide-next {
       z-index: 0;
    }
+
    .swiper-pagination {
       bottom: 1rem !important;
+
       .swiper-pagination-bullet {
          background: #fff !important;
+
          &.swiper-pagination-bullet-active {
             transform: scale(1.4) !important;
             transition: 0.2s;
@@ -87,6 +102,7 @@
       }
    }
 }
+
 .Switch {
    align-items: center;
    justify-content: center;
@@ -117,10 +133,12 @@
          white-space: nowrap;
          z-index: 2;
          transform: scale(1.2);
+
          &:hover {
             background-color: rgb(163, 4, 4);
          }
       }
+
       &:hover {
          background-color: rgba(233, 57, 57, 0.76);
       }
@@ -132,6 +150,7 @@
       .BigSlide {
          height: 50vh !important;
       }
+
       .swiper-slide-active {
          width: 80% !important;
          margin-left: -4rem;

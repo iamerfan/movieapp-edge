@@ -31,6 +31,9 @@ export default function BigSlide({ item }) {
                onLoadStart={() => setLoading(true)}
                onLoadingComplete={() => setLoading(false)}
                priority
+               sizes='(max-width: 768px) 100vw,
+              (max-width: 1200px) 100vw,
+              100vw'
                alt=''
             />
             <div className='SlideTitle'>
@@ -39,14 +42,6 @@ export default function BigSlide({ item }) {
                   <div className='divider'></div>
                   <div className='overview'>{item.overview}</div>
                </div>
-               {/* <div className='Vote'>
-                  <StarFilledIcon />
-                  <label>7.8</label>
-               </div>
-               <div className='Release'>
-                  <CalendarIcon />
-                  <label>2022-12-11</label>
-               </div> */}
             </div>
          </div>
       </div>

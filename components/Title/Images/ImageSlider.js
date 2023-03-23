@@ -11,7 +11,6 @@ export default function ImageSlider({ item }) {
    const imgUrl = `${serverUrl}${item.file_path}`
    useEffect(() => {
       setLoading(true)
-      console.log(item.file_path)
    }, [item.file_path])
    return (
       <Link href={imgUrl} target={`_blank`}>

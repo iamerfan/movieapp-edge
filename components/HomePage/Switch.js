@@ -15,11 +15,12 @@ export default function Switch() {
       <div className='Switch'>
          <button
             onClick={() => handleType('movie')}
-            className={!query.type || query.type === 'movie' ? 'active' : ''}>
+            className={!query.type || query.type === 'movie' ? 'active' : ''}
+         >
             <FilmIcon /> Movie
          </button>
          <button onClick={() => handleType('tv')} className={query.type === 'tv' ? 'active' : ''}>
-            <TvIcon /> Tv Seires
+            <TvIcon /> Tv Series
          </button>
       </div>
    )

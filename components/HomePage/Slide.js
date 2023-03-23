@@ -28,7 +28,6 @@ export default function Slide({ item }) {
          <Image
             src={imgUrl}
             fill
-            onLoadStart={() => setLoading(true)}
             onLoadingComplete={() => setLoading(false)}
             sizes='(max-width: 768px) 100vw,
               (max-width: 1200px) 100vw,

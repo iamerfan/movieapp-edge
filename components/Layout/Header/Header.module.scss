@@ -11,23 +11,28 @@
    justify-content: center;
    transition: 0.2s ease-in-out;
    padding: 0.5rem 0;
+
    .Toggle {
       background-color: transparent;
       color: #fff;
       border: none;
    }
+
    &.active {
       background-color: rgba(0, 0, 0, 0.7);
       transition: 0.2s ease-in-out;
+
       .Logo {
          left: 50%;
       }
+
       .HeaderItems {
          width: 100%;
          transition: 0.2s;
          gap: 20rem;
       }
    }
+
    .Logo {
       position: absolute;
       color: white;
@@ -39,11 +44,13 @@
       padding: 0.5rem;
       transition: 0.5s ease-in-out;
       gap: 0.5rem;
+
       label {
          font-size: 1.6rem;
          font-family: Kanit;
       }
    }
+
    .HeaderItems {
       display: flex;
       align-items: center;
@@ -51,15 +58,18 @@
       gap: 3rem;
       transition: 0.2s;
       white-space: nowrap;
+
       .Seperators {
          display: flex;
          align-items: center;
          gap: 3rem;
+
          .item {
             display: flex;
             color: #fff;
             align-items: center;
             gap: 0.5rem;
+
             svg {
                width: 20px;
                height: 20px;
@@ -67,30 +77,38 @@
          }
       }
    }
+
+
 }
+
 @media only screen and (max-width: 1000px) {
    .Navbar {
       background-color: rgba(0, 0, 0, 0.808);
       min-height: 60px;
       transition: 0.2s;
       border-bottom: 1px solid transparent;
+
       &.collapse {
          border-color: rgba(255, 255, 255, 0.3);
          border-bottom-left-radius: 20px;
          border-bottom-right-radius: 20px;
+
          &.active {
             .Logo {
                left: 50%;
             }
          }
+
          .Logo {
             white-space: nowrap;
             left: 50%;
             transform: translateX(-60%);
          }
+
          & {
             height: 350px;
          }
+
          .HeaderItems {
             display: flex;
             flex-direction: column;
@@ -99,6 +117,7 @@
             gap: 2rem;
             padding: 6rem 0 1rem 0;
             transition: 0.2s;
+
             .Seperators {
                padding: 0 1rem;
                gap: 2rem;
@@ -114,13 +133,16 @@
             }
          }
       }
+
       .HeaderItems {
          display: none;
       }
+
       .Logo {
          top: 0.2rem;
          left: 6rem;
       }
+
       .Toggle {
          position: absolute;
          right: 1rem;
@@ -130,16 +152,19 @@
          height: 40px;
          width: 40px;
       }
+
       &.active {
          .Logo {
             left: 6rem;
          }
+
          .HeaderItems {
             flex-direction: column;
 
             .Seperators {
                gap: inherit;
             }
+
             .Login {
                position: unset;
             }

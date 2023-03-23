@@ -38,16 +38,15 @@ export default function HomeCarousel({ data }) {
                spaceBetween: 10,
             },
             1000: {
-               slidesPerView: 2,
-
-               spaceBetween: 150,
+               spaceBetween: 250,
             },
          }}
-         className='HomeSwiper'>
+         className='HomeSwiper'
+      >
          {data.map((item, i) => {
             return (
-               <SwiperSlide key={i} className={'testSlide'}>
-                  <BigSlide key={i} item={item} />
+               <SwiperSlide key={i}>
+                  <BigSlide item={item} />
                </SwiperSlide>
             )
          })}

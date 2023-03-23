@@ -33,15 +33,21 @@ export default function Colapsiable() {
       <div
          className={`${styles.Navbar} ${headerActive && styles.active} ${
             colaps && styles.collapse
-         }`}>
-         <Link href={'/'} className={styles.Logo}>
+         }`}
+      >
+         <Link href={'/'} className={styles.Logo} onClick={() => setColaps(false)}>
             <Image src={Logo} width={40} height={40} alt='' />
             <label>Movie App</label>
          </Link>
          <div className={styles.HeaderItems}>
             <div className={styles.Seperators}>
-               <SearchModal />
-               <Link shallow href='/genres' className={styles.item}>
+               <SearchModal onClick={() => setColaps(false)} />
+               <Link
+                  shallow
+                  href='/genres'
+                  className={styles.item}
+                  onClick={() => setColaps(false)}
+               >
                   <BarsArrowDownIcon />
                   Genres
                </Link>

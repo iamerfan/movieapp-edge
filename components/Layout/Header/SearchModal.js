@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { useRef } from 'react'
 import { useRouter } from 'next/router'
 
-const SearchModal = data => {
+const SearchModal = ({ onClick }) => {
    const router = useRouter()
    const queryRef = useRef()
    const closeRef = useRef()
@@ -19,7 +19,7 @@ const SearchModal = data => {
    return (
       <Dialog.Root>
          <Dialog.Trigger asChild>
-            <button className={styles.NavButton}>
+            <button className={styles.NavButton} onClick={onClick}>
                <MagnifyingGlassIcon />
                Search
             </button>

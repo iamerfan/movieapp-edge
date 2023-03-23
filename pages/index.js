@@ -2,7 +2,6 @@ import axios from 'axios'
 import Carousel from 'components/HomePage/Carousel'
 import HomeCarousel from 'components/HomePage/HomeCarousel'
 import Switch from 'components/HomePage/Switch'
-import { server } from 'libs/config'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 export default function Home({ data }) {
@@ -18,7 +17,7 @@ export default function Home({ data }) {
 }
 export const getServerSideProps = async req => {
    const { type } = req.query
-   const url = `${server}/api/home/?type=${type ? 'tv' : 'movie'}`
+   const url = `${process.env.URL}/api/home/?type=${type ? 'tv' : 'movie'}`
    const data = await axios.get(url).then(res => res.data)
    return { props: { data } }
 }

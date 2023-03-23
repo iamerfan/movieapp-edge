@@ -1,13 +1,13 @@
 {
-   "name": "movie_app",
-   "version": "0.1.0",
-   "private": true,
    "scripts": {
       "dev": "next dev",
       "build": "next build",
       "start": "next start",
       "lint": "next lint"
    },
+   "name": "movie_app",
+   "version": "0.1.0",
+   "private": true,
    "dependencies": {
       "@heroicons/react": "^2.0.15",
       "@next/font": "^13.1.1",
@@ -35,5 +35,6 @@
       "sass": "^1.57.1",
       "sharp": "^0.31.3",
       "swiper": "^8.4.6"
-   }
+   },
+   "devDependencies": {}
 }

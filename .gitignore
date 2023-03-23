@@ -32,3 +32,9 @@ yarn-error.log*
 .vercel
 
 .vercel
+
+# Edgio generated build directory
+.edgio
+
+# Edgio generated build directory
+.edgio
