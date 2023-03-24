@@ -8,8 +8,6 @@ import { CalendarDaysIcon, StarIcon } from '@heroicons/react/24/solid'
 import Link from 'next/link'
 import Loading from 'components/HomePage/Loading'
 
-const serverUrl = 'https://image.tmdb.org/t/p/'
-
 export default function Result({ item }) {
    const type = useRouter().query.slug[0]
    const handleUrl = () => {

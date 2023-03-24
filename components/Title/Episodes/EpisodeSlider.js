@@ -5,8 +5,6 @@ import Loading from '../../HomePage/Loading'
 import { StarIcon } from '@heroicons/react/24/solid'
 import Link from 'next/link'
 
-const serverUrl = 'https://image.tmdb.org/t/p/'
-
 export default function EpisodeSlider({ item, seriesName }) {
    const [loading, setLoading] = useState(true)
    const imgUrl = `/img${item.still_path}`

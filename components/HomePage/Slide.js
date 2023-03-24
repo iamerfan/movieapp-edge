@@ -8,8 +8,6 @@ import { CalendarDaysIcon, StarIcon } from '@heroicons/react/24/solid'
 import Link from 'next/link'
 import { server } from 'libs/config'
 
-const serverUrl = 'https://image.tmdb.org/t/p/'
-
 export default function Slide({ item }) {
    const handleUrl = () => {
       if (item.poster_path) return item.poster_path

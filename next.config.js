@@ -31,6 +31,10 @@ const nextConfig = {
             source: '/img/:path*',
             destination: 'https://image.tmdb.org/t/p/w500/:path*',
          },
+         {
+            source: '/video/:first',
+            destination: 'https://www.imdb.com/video/imdb/:first/imdb/embed',
+         },
       ]
    },
 }
