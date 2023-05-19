@@ -1,6 +1,4 @@
 import { handleSlug } from "libs/handleQuery";
-export const config = { runtime: "edge" };
-
 export default async function getMoviesBaseOnGenre(req, res) {
   const { SERVER, API_KEY } = process.env;
   const slug = handleSlug(req, "/genres/");

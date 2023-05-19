@@ -44,9 +44,8 @@ export const getServerSideProps = async ({ query }) => {
    const id = slug[1]
    const season = slug[2] ? slug[2] : 1
    const url = `${server}/api/edge/title/${type}/${id}/${type === 'tv' && season}`
-   const data = await axios
-      .get(url)
-      .then(res => res.data)
+   const data = await fetch(url)
+      .then(res => res.json())
       .catch(e => console.log(e))
    return { props: { data } }
 }

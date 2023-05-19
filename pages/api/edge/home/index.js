@@ -3,8 +3,6 @@ import { handleQuery } from "libs/handleQuery";
 
 const { SERVER, API_KEY } = process.env;
 
-export const config = { runtime: "edge" };
-
 export default handler = async (req, res) => {
   const { href } = new URL(req.url);
   const { type } = handleQuery(href);

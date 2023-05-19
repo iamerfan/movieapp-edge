@@ -17,6 +17,7 @@ const nextConfig = {
    },
    experimental: {
       largePageDataBytes: 220000,
+      runtime:'experimental-edge'
    },
    env: {
       BASE_URL: process.env.BASE_URL,

@@ -133,9 +133,6 @@ export const getServerSideProps = async ({ query }) => {
          },
          props: {},
       }
-   const data = await axios
-      .get(url)
-      .then(res => res.data)
-      .catch(e => console.log(e))
-   return { props: { data } }
+  const data = await fetch(url).then((res) => res.json());
+  return { props: { data } };
 }
