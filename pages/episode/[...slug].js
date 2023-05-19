@@ -124,7 +124,7 @@ export default function Episode({ data, seriesName }) {
 }
 export const getServerSideProps = async ({ query }) => {
    const { slug } = query
-   const url = `${server}/api/episode/${slug.join('/')}`
+   const url = `${server}/api/edge/episode/${slug.join('/')}`
    if (!slug[0] || !slug[1] || !slug[2])
       return {
          redirect: {

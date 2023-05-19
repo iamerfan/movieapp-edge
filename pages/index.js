@@ -17,7 +17,7 @@ export default function Home({ data }) {
 }
 export const getServerSideProps = async req => {
    const { type } = req.query
-   const url = `${process.env.URL}/api/home/?type=${type ? 'tv' : 'movie'}`
+   const url = `${process.env.URL}/api/edge/home/?type=${type ? 'tv' : 'movie'}`
    const data = await axios.get(url).then(res => res.data)
    return { props: { data } }
 }

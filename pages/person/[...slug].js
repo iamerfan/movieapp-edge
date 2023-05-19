@@ -25,7 +25,7 @@ export default function Person({ data }) {
 export const getServerSideProps = async ({ query }) => {
    const { slug } = query
    const id = slug[0]
-   const url = `${server}/api/person/${id}`
+   const url = `${server}/api/edge/person/${id}`
    if (!id)
       return {
          redirect: {

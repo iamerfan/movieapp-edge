@@ -17,7 +17,7 @@ export default function Genres({ data }) {
 
 export const getServerSideProps = async ({ query }) => {
    const { slug } = query
-   const url = `${server}/api/genres/${slug.join('/')}`
+   const url = `${server}/api/edge/genres/${slug.join('/')}`
    if (!slug[0] || !slug[1] || !slug[2] || !slug[3])
       return {
          redirect: {
