@@ -4,7 +4,7 @@ const { SERVER, API_KEY } = process.env;
 
 export const config = { runtime: "edge" };
 
-export default handler = async (req, res) => {
+export default async function GET(req){
   const { href } = new URL(req.url);
   const { type } = handleQuery(href);
   const movie = type === "movie" ? true : false;
