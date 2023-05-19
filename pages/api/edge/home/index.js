@@ -1,7 +1,8 @@
-import axios from "axios";
 import { handleQuery } from "libs/handleQuery";
 
 const { SERVER, API_KEY } = process.env;
+
+export const config = { runtime: "edge" };
 
 export default handler = async (req, res) => {
   const { href } = new URL(req.url);
@@ -10,21 +11,15 @@ export default handler = async (req, res) => {
   const handleUrl = (url) => {
     return `${SERVER}/${url}?page=1&${API_KEY}`;
   };
-  const popular = handleUrl(`${type}/popular`);
-  const trending = handleUrl(`/trending/${type}/day`);
+  const popular = handleUrl(`${movie ? "movie" : "tv"}/popular`);
+  const trending = handleUrl(`/trending/${movie ? "movie" : "tv"}/day`);
   const upcoming = handleUrl(`${movie ? "movie/upcoming" : "tv/airing_today"}`);
-  const topRated = handleUrl(`${type}/top_rated`);
+  const topRated = handleUrl(`${movie ? "movie" : "tv"}/top_rated`);
 
   const urls = [trending, popular, upcoming, topRated];
-  const handleAxios = (url) =>
-    fetch(url).then(async (res) => {
-      const { results } = await res.json();
-      return results;
-    });
-
-  const promises = urls.map((url) => handleAxios(url));
-  const response = await Promise.all([...promises]).then((values) => {
-    return [...values];
-  });
-  return new Response(JSON.stringify(response));
+  const promises =await Promise.all(urls.map( (url) => fetch(url).then(async(res) => {
+    const value = await res.json()
+    return value.results
+  })));
+  return new Response(JSON.stringify(promises));
 };

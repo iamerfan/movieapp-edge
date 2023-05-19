@@ -18,6 +18,8 @@ export default function Home({ data }) {
 export const getServerSideProps = async (req) => {
   const { type } = req.query;
   const url = `${process.env.URL}/api/edge/home/?type=${type ? "tv" : "movie"}`;
-  const data = await fetch(url).then((res) => res.json());
-  return { props: {data} };
+  const data = await fetch(url)
+    .then((res) => res.json())
+    .catch((err) => console.log(err));
+  return { props: { data } };
 };
