@@ -10,7 +10,7 @@ export default function Genres({ data }) {
       <div className={styles.Genres}>
          <GenresPanel data={data.genres} />
          <SwitchAndSort />
-         <Results data={data} pageIndex={2} name='Discover' />
+         <Results data={data} pageIndex={2} name='Discover ' />
       </div>
    )
 }
